@@ -106,6 +106,45 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageViewPhone"
+                android:layout_width="29dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="iconPhone"
+                android:elevation="15dp"
+                android:src="@mipmap/ic_phone_foreground"
+                android:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/Address_CV"
+                app:layout_constraintTop_toBottomOf="@+id/Name_CV" />
+
+            <ImageView
+                android:id="@+id/imageViewLocation"
+                android:layout_width="29dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="iconLocation"
+                android:elevation="15dp"
+                android:src="@mipmap/ic_location_foreground"
+                android:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/PhoneNumber_CV"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewPhone" />
+
+            <ImageView
+                android:id="@+id/imageViewWeb"
+                android:layout_width="29dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                    android:contentDescription="iconWeb"
+                android:elevation="15dp"
+                android:src="@mipmap/ic_web_foreground"
+                android:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/SocialReseau_CV"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLocation" />
+
         </android.support.constraint.ConstraintLayout>
 
 

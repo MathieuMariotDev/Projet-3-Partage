@@ -48,13 +48,28 @@ public class NeighbourServiceTest {
     @Test
     public void addFavoriteWithSucces(){
         Neighbour neighbourToFavorite = service.getNeighbours().get(1);
-        neighbourToFavorite.setFavorite(true);
+        neighbourToFavorite.setFavorite(false);
         assertTrue(service.getNeighbours().contains(neighbourToFavorite));
 
     }
 
     @Test
-    public void Detail(){
+    public void createNeighbourWithSucces(){
+        Neighbour neighbourAdd= new Neighbour(13,"MathieuADD","https://i.pravatar.cc/150?u=a042581f4e29026704d","Dans le test","0750886058","Dans le test",false);
+        service.createNeighbour(neighbourAdd);
+        assertTrue(service.getNeighbours().contains(neighbourAdd));
+    }
+
+    @Test
+    public void getNeighbourWithSuccess (){
+        Neighbour neighbour = service.getNeighbours().get(1);
+        assertTrue(service.getNeighbours().contains(neighbour));
+    }
+
+    @Test
+    public void actualyFavorite(){
+        Neighbour neighbour = service.getNeighbours().get(0);
+        assertTrue(neighbour.getFavorite()==true);
 
     }
 }
