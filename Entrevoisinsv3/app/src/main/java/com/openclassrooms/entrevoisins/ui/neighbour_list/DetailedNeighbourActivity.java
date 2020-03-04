@@ -40,39 +40,33 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_neighbour);
         mApiService = DI.getNeighbourApiService();   // importe l'interface
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //display back button
+        getSupportActionBar().setDisplayShowTitleEnabled(false);// Not display titre
         Intent intent = getIntent();
-        Neighbour neighbour = (Neighbour) intent.getParcelableExtra("DN");
-        setDetailedView(neighbour);
+        Neighbour neighbour = (Neighbour) intent.getParcelableExtra("Neigh");
+        setDetailedView(neighbour); //call method bellow
         if(neighbour.getFavorite()==true){
             btnaddToFavorite.setColorFilter(Color.RED);
         }
         mNeighboursfav=mApiService.getNeighbours(); // donne la valeur de note bd a mNeighbours
-        btnaddToFavorite=findViewById(R.id.Favori_Add);
+
         btnaddToFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mNeighboursfav.set((int)neighbour.getId()-1,neighbour);
                 if(neighbour.getFavorite()== true){
                     neighbour.setFavorite(false);
-                    mNeighboursfav.set((int)neighbour.getId()-1,neighbour);
+                    mNeighboursfav.set((int)neighbour.getId()-1,neighbour);//-1 for dif id and size
                     btnaddToFavorite.setColorFilter(Color.YELLOW);
                 }
                 else{
-                    btnaddToFavorite.setColorFilter(Color.RED);
                     neighbour.setFavorite(addFavorite);
                     mNeighboursfav.set((int)neighbour.getId()-1,neighbour);
+                    btnaddToFavorite.setColorFilter(Color.RED);
                 }
             }
         });
@@ -89,7 +83,7 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
         avatarview = findViewById(R.id.AvatarView);
         NameLarge = findViewById(R.id.Name_Large);
         NameLarge.setText(neighbour.getName());
-        Glide.with(this).load(url)
+        Glide.with(this).load(url) //load url
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_background)
                 .into(avatarview);

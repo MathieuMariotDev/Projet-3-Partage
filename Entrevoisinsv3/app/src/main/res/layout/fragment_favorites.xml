@@ -12,9 +12,9 @@
         android:layout_width="410dp"
         android:layout_height="735dp"
         app:layoutManager="LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".ui.neighbour_list.NeighbourFragment"
-        tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/fragment_neighbour" />
     <!-- TODO: Update blank fragment layout -->
 

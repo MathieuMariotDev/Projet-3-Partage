@@ -60,7 +60,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View view) {
                 Intent DetailedActivity = new Intent(view.getContext(), DetailedNeighbourActivity.class);       //
-                DetailedActivity.putExtra("DN", neighbour);
+                DetailedActivity.putExtra("Neigh", neighbour);
                 view.getContext().startActivity(DetailedActivity);//
                 EventBus.getDefault();//
                 Log.i("DEBUG","l'utilisateur essaye d'ouvrir le détaille");

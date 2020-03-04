@@ -47,8 +47,8 @@ public class AddNeighbourActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_neighbour);
         ButterKnife.bind(this);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mApiService = DI.getNeighbourApiService();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Display back button need configure in manifest
+        mApiService = DI.getNeighbourApiService(); // create instance interface Neighbour ApiService
         init();
     }
 
@@ -82,16 +82,16 @@ public class AddNeighbourActivity extends AppCompatActivity {
 
     @OnClick(R.id.create)
     void addNeighbour() {
-        Neighbour neighbour = new Neighbour(
+        Neighbour neighbour = new Neighbour( //init Neighbour neighbour
                 System.currentTimeMillis(),
                 nameInput.getEditText().getText().toString(),
                 mNeighbourImage,
                 addressInput.getEditText().getText().toString(),
                 phoneInput.getEditText().getText().toString(),
                 aboutMeInput.getEditText().getText().toString(),
-                favorite     //favorite false
+                favorite //favorite false by default
         );
-        mApiService.createNeighbour(neighbour);
+        mApiService.createNeighbour(neighbour);  // Add neihbour to the list of neighbours (with bad id)
         finish();
     }
 
@@ -100,7 +100,7 @@ public class AddNeighbourActivity extends AppCompatActivity {
      * @return String
      */
     String randomImage() {
-        return "https://i.pravatar.cc/150?u="+ System.currentTimeMillis();
+        return "https://i.pravatar.cc/150?u="+ System.currentTimeMillis();//return random image
     }
 
     /**
@@ -108,7 +108,7 @@ public class AddNeighbourActivity extends AppCompatActivity {
      * @param activity
      */
     public static void navigate(FragmentActivity activity) {
-        Intent intent = new Intent(activity, AddNeighbourActivity.class);
-        ActivityCompat.startActivity(activity, intent, null);
+        Intent intent = new Intent(activity, AddNeighbourActivity.class); //Intent to open  AddNeighbourActivity
+        ActivityCompat.startActivity(activity, intent, null); // Start of new  AddNeighbourActivity
     }
 }

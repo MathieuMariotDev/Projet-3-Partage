@@ -36,7 +36,7 @@ public class FavoritesFragment extends Fragment {
     private MyNeighbourRecyclerViewAdapter adapterfav; //adapter for recycler view
     private NeighbourApiService mApiservice;  //interface///
     boolean favorite;
-    private ImageButton btntest;
+
 
 
 
@@ -57,7 +57,7 @@ public class FavoritesFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_favorites, container, false);
-        ButterKnife.bind(this, view);
+        ButterKnife.bind(this, view); //for bindview
         configureRecyclerView();
         return view;
 
