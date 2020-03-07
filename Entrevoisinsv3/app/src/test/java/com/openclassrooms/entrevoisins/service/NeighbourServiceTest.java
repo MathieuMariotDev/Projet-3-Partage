@@ -13,8 +13,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -26,7 +28,6 @@ import static org.junit.Assert.assertTrue;
 public class NeighbourServiceTest {
 
     private NeighbourApiService service;
-    private FavoritesFragment mFavoritesFragment;
 
     @Before
     public void setup() {
@@ -56,6 +57,14 @@ public class NeighbourServiceTest {
     }
 
     @Test
+    public void removeFavoriteWithSucces(){//ok un autre a faux
+        Neighbour neighbourToFavorite = service.getNeighbours().get(1);
+        neighbourToFavorite.setFavorite(false);
+        assertTrue(service.getNeighbours().contains(neighbourToFavorite));
+
+    }
+
+    @Test
     public void createNeighbourWithSucces(){ //ok
         Neighbour neighbourAdd= new Neighbour(13,"MathieuADD","https://i.pravatar.cc/150?u=a042581f4e29026704d","Dans le test","0750886058","Dans le test",false);
         service.createNeighbour(neighbourAdd);
@@ -63,15 +72,27 @@ public class NeighbourServiceTest {
     }
 
     @Test
-    public void getNeighbourWithSuccess (){
-        //change bd
+    public void getNeighbourWithSuccess (){ // ?
+        Neighbour neighbourexcpected = DummyNeighbourGenerator.DUMMY_NEIGHBOURS.get(1);
         Neighbour neighbour = service.getNeighbours().get(1);
-        assertTrue(service.getNeighbours().contains(neighbour));
+        assertEquals(neighbourexcpected,neighbour);
     }
 
-    /*@Test // prend ceux a true
-    public void actualyFavorite(){
 
+    @Test
+    public void getFavoriteWithSucces(){
+        List<Neighbour> neighboursFav = service.getNeighboursFavorites();
+        List<Neighbour> neighbours = DummyNeighbourGenerator.DUMMY_NEIGHBOURS;
+        List<Neighbour> neighboursFavExpected = new ArrayList<>();
 
-    }*/
+        for(int i=0;i<neighbours.size();i++){
+            boolean favorite=false;
+            Neighbour neighbour=neighbours.get(i);
+            favorite=neighbour.getFavorite();
+            if(favorite==true) {
+                neighboursFavExpected.add(neighbour);
+            }
+        }
+        assertEquals(neighboursFavExpected,neighboursFav);
+    }
 }

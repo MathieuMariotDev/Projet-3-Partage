@@ -34,7 +34,6 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
     private TextView NameCV;
     private TextView AboutMeCV;
     private ImageButton btnaddToFavorite;
-    private boolean addFavorite=true;
     private NeighbourApiService mApiService;  //Déclaration Interface
     private List<Neighbour> mNeighboursfav = new ArrayList<>(); //déclare une list Neighbour
 
@@ -59,13 +58,11 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(neighbour.getFavorite()== true){
-                    neighbour.setFavorite(false);
-                    mNeighboursfav.set((int)neighbour.getId()-1,neighbour);//-1 for dif id and size
+                    mApiService.setFavorite((int)neighbour.getId(),false);
                     btnaddToFavorite.setColorFilter(Color.YELLOW);
                 }
                 else{
-                    neighbour.setFavorite(addFavorite);
-                    mNeighboursfav.set((int)neighbour.getId()-1,neighbour);
+                    mApiService.setFavorite((int)neighbour.getId(),true);
                     btnaddToFavorite.setColorFilter(Color.RED);
                 }
             }
@@ -94,5 +91,6 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
         SocialReseauCV.setText("www.facebook.fr/"+neighbour.getName());
         btnaddToFavorite= findViewById(R.id.Favori_Add);
     }
+
 
 }
