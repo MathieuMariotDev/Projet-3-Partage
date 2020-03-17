@@ -49,10 +49,10 @@ public class NeighbourServiceTest {
     }
 
     @Test
-    public void addFavoriteWithSucces(){//ok un autre a faux
+    public void addFavoriteWithSucces(){//
         Neighbour neighbourToFavorite = service.getNeighbours().get(1);
         service.setFavorite((int)neighbourToFavorite.getId(),true);
-        assertTrue(service.getNeighbours().contains(neighbourToFavorite));
+        assertTrue(service.getNeighboursFavorites().contains(neighbourToFavorite));
 
     }
 
@@ -60,7 +60,7 @@ public class NeighbourServiceTest {
     public void removeFavoriteWithSucces(){//ok un autre a faux
         Neighbour neighbourToFavorite = service.getNeighbours().get(1);
         service.setFavorite((int)neighbourToFavorite.getId(),false);
-        assertTrue(service.getNeighbours().contains(neighbourToFavorite));
+        assertFalse(service.getNeighboursFavorites().contains(neighbourToFavorite));
 
     }
 
