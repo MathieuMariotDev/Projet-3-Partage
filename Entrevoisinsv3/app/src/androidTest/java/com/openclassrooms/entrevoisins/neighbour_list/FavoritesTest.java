@@ -48,9 +48,6 @@ public class FavoritesTest {
         onView(withId(R.id.Detailed_Neighbour)).perform(pressBack());
         onView(ViewMatchers.withText("Favorites"))
                 .perform(click());
-        //onView(withId(R.id.list_neighbours_favorites)).check(matches(isDisplayed()));
-
-        //onView(withId(R.id.container)).perform(swipeLeft());
 
         onView(allOf(withId(R.id.item_list_name), withText("Jack"),isDisplayed())).check(matches(withText("Jack")));
 

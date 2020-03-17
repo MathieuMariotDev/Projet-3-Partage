@@ -35,7 +35,6 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
     private TextView AboutMeCV;
     private ImageButton btnaddToFavorite;
     private NeighbourApiService mApiService;  //Déclaration Interface
-    private List<Neighbour> mNeighboursfav = new ArrayList<>(); //déclare une list Neighbour
 
 
 
@@ -52,8 +51,6 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
         if(neighbour.getFavorite()==true){
             btnaddToFavorite.setColorFilter(Color.RED);
         }
-        mNeighboursfav=mApiService.getNeighbours(); // donne la valeur de note bd a mNeighbours
-
         btnaddToFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,9 +85,9 @@ public class DetailedNeighbourActivity extends AppCompatActivity {
         PhoneNumberCV.setText(neighbour.getPhoneNumber());
         NameCV.setText(neighbour.getName());
         AddressCV.setText(neighbour.getAddress());
-        SocialReseauCV.setText("www.facebook.fr/"+neighbour.getName());
+        SocialReseauCV.setText("www.facebook.fr/"+neighbour.getName()); //Generate fake fb
         btnaddToFavorite= findViewById(R.id.Favori_Add);
     }
 
-
 }
+

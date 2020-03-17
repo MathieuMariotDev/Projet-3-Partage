@@ -61,8 +61,8 @@ public class DummyNeighbourApiService implements NeighbourApiService {
         }
     }
 }
+
 /*for (Neighbour neighbour : neighbours) {
-         if (neighbour.getId()==fav)
-             neighbour.setFavorite(boll);
-     }
+        if (neighbour.getId()==id)
+        neighbour.setFavorite(favorite);
         }*/

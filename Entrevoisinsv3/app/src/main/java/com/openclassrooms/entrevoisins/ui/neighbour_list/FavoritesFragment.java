@@ -38,7 +38,6 @@ import static android.support.constraint.Constraints.TAG;
 public class FavoritesFragment extends Fragment {
 
     @BindView(R.id.list_neighbours_favorites) RecyclerView mRecyclerViewFavorite; // declare recycler view
-    private MyNeighbourRecyclerViewAdapter adapterfav; //adapter for recycler view
     private NeighbourApiService mApiservice;  //interface///
     public List<Neighbour> neighbourFavorites = new ArrayList<>();
 
@@ -100,7 +99,6 @@ public class FavoritesFragment extends Fragment {
 
     @Subscribe
     public void onDeleteNeighbour(DeleteNeighbourEvent event) {
-        //mApiservice.deleteNeighbour(event.neighbour);
         initListFav();
     }
 }
