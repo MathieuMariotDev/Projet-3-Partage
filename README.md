@@ -1,7 +1,22 @@
-# EntreVoisins
-=========================================
+# EntreVoisins Application du projet 3 OpenClassrooms
+--------------------
 
+Les fonctionnalités déjà présente dans l'application : 
 
+* Lister les voisins.
+* Ajouter un voisin.
+* Supprimer un voisin.
+
+Les fonctionnalités développé durant le projet :
+
+* Un onglet favoris dans lequel les utilisateurs marqués comme favoris s'affichent.
+
+Au clic sur un utilisateur :
+
+* Un bouton de retour à l'élément précédent.
+* L'avatar de l'utilisateur.
+* Le nom de l'utilisateur.
+* Un bouton d'ajout du voisin à la liste de favoris.
 
 
 1 ->Press "clone or download"
