@@ -10,6 +10,7 @@ Les fonctionnalités déjà présente dans l'application :
 Les fonctionnalités développé durant le projet :
 
 * Un onglet favoris dans lequel les utilisateurs marqués comme favoris s'affichent.
+* Réalisation des tests unitaires et instrumentalisés .
 
 Au clic sur un utilisateur :
 
