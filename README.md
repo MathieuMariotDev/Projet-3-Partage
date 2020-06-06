@@ -18,14 +18,24 @@ Au clic sur un utilisateur :
 * Le nom de l'utilisateur.
 * Un bouton d'ajout du voisin à la liste de favoris.
 
-## Ecran du téléphone
+## Phone display
 
+<img src="./screenshots/mainScreen.jpg" width="30%" height="30%">&ensp;<img src="./screenshots/favoritesScreen.jpg" width="30%" height="30%">
+<img src="./screenshots/DetailScreen.jpg" width="30%" height="30%">
 
+## Add & delete favorites
 
-### Phone display:
+<img src="./screenshots/addFav.gif" width="30%" height="30%">&ensp;<img src="./screenshots/deleteFav.gif" width="30%" height="30%">
 
-<img src="./screenshots/device-2020-06-05-184259.jpg" width="30%" height="30%">&ensp;<img src="./screenshots/rem_main_map_phone.jpg" width="30%" height="30%">
-<img src="./screenshots/rem_details.jpg" width="30%" height="30%">
+### App Architecture
+
+* Java
+
+### Library
+
+* ButterKnife
+* Espresso
+
 
 1 ->Press "clone or download"
 2 -> Download zip
